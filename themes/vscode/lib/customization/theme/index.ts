@@ -1,0 +1,14 @@
+export {
+  SETTINGS_NAMESPACE,
+  SUPPORTED_THEMES,
+  THEME_DEFAULT,
+  getSupportedThemeNames,
+} from "./catalog";
+export {
+  ACCENT_ALPHA_KEYS,
+  ACCENT_COLOR_KEYS,
+  BORDER_BACKGROUND_KEYS,
+  CHROME_COLOR_KEYS,
+  MANAGED_COLOR_KEYS,
+  POPUP_BACKGROUND_KEYS,
+} from "./keys";

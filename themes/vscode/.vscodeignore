@@ -1,0 +1,38 @@
+# Local development files
+.gitignore
+.cursorignore
+.github/**
+.vscode/**
+.trunk/**
+
+# Source and reference files not needed in the packaged extension
+*.ps1
+*.jsonc
+**/*.ts
+themes/src/**
+monokai-pro.jsonc
+themes/*.jsonc
+theme-references/**
+tsconfig.json
+tsconfig.themes.json
+build.ts
+extension.ts
+lib/**/*.ts
+lib/**/*.js
+!dist/lib/**/*.js
+dist/build.js
+dist/themes/src/**
+dist/test/**
+test/**
+
+# Project docs and misc authoring files
+README.md
+docs/**
+scripts/**
+
+# Generated/package artifacts
+*.vsix
+node_modules/**
+coverage/**
+out/**
+.theme-build/**

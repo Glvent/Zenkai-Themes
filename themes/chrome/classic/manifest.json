@@ -1,0 +1,196 @@
+{
+  "manifest_version": 3,
+  "name": "Zenkai Classic",
+  "short_name": "Zenkai Classic",
+  "version": "1.0.0",
+  "version_name": "1.0",
+  "description": "Zenkai Classic - A warm Monokai-inspired dark theme with neutral accents.",
+  "minimum_chrome_version": "88",
+  "theme": {
+    "colors": {
+      "frame": [
+        29,
+        29,
+        26
+      ],
+      "frame_inactive": [
+        29,
+        29,
+        26
+      ],
+      "frame_incognito": [
+        29,
+        29,
+        26
+      ],
+      "frame_incognito_inactive": [
+        29,
+        29,
+        26
+      ],
+      "toolbar": [
+        37,
+        37,
+        34
+      ],
+      "toolbar_button_icon": [
+        196,
+        194,
+        186
+      ],
+      "toolbar_text": [
+        243,
+        241,
+        231
+      ],
+      "tab_text": [
+        243,
+        241,
+        231
+      ],
+      "tab_background_text": [
+        151,
+        152,
+        143
+      ],
+      "tab_background_text_inactive": [
+        151,
+        152,
+        143
+      ],
+      "tab_background_text_incognito": [
+        196,
+        194,
+        186
+      ],
+      "tab_background_text_incognito_inactive": [
+        88,
+        91,
+        84
+      ],
+      "bookmark_text": [
+        243,
+        241,
+        231
+      ],
+      "button_background": [
+        29,
+        29,
+        26
+      ],
+      "ntp_background": [
+        29,
+        29,
+        26
+      ],
+      "ntp_text": [
+        243,
+        241,
+        231
+      ],
+      "ntp_link": [
+        194,
+        192,
+        182
+      ],
+      "ntp_header": [
+        243,
+        241,
+        231
+      ],
+      "omnibox_background": [
+        37,
+        37,
+        34
+      ],
+      "omnibox_text": [
+        243,
+        241,
+        231
+      ],
+      "background_tab": [
+        29,
+        29,
+        26
+      ],
+      "background_tab_inactive": [
+        29,
+        29,
+        26
+      ],
+      "background_tab_incognito": [
+        29,
+        29,
+        26
+      ],
+      "background_tab_incognito_inactive": [
+        29,
+        29,
+        26
+      ]
+    },
+    "tints": {
+      "buttons": [
+        -1,
+        0.5,
+        0.5
+      ],
+      "frame": [
+        -1,
+        0.5,
+        0.5
+      ],
+      "frame_inactive": [
+        -1,
+        0.5,
+        0.7
+      ],
+      "frame_incognito": [
+        -1,
+        0.2,
+        0.35
+      ],
+      "frame_incognito_inactive": [
+        -1,
+        0.3,
+        0.6
+      ],
+      "background_tab": [
+        -1,
+        -1,
+        -1
+      ],
+      "background_tab_inactive": [
+        -1,
+        -1,
+        -1
+      ],
+      "background_tab_incognito": [
+        -1,
+        -1,
+        -1
+      ],
+      "background_tab_incognito_inactive": [
+        -1,
+        -1,
+        -1
+      ]
+    },
+    "properties": {
+      "ntp_background_alignment": "center center",
+      "ntp_background_repeat": "no-repeat",
+      "ntp_logo_alternate": 0
+    },
+    "tab_group_color_palette": {
+      "grey_override": -1,
+      "blue_override": 188,
+      "red_override": 343,
+      "yellow_override": 188,
+      "green_override": 133,
+      "pink_override": 343,
+      "purple_override": 247,
+      "cyan_override": 188,
+      "orange_override": 23
+    }
+  }
+}

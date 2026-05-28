@@ -1,0 +1,113 @@
+{
+  "name": "zenkai",
+  "displayName": "Zenkai",
+  "description": "A minimal Monokai Pro fork with four UI variants.",
+  "version": "1.0.1",
+  "publisher": "glvent",
+  "icon": "images/Zenkai.png",
+  "author": "George Vent <gvent2007@gmail.com>",
+  "repository": "",
+  "main": "./dist/extension.js",
+  "scripts": {
+    "clean": "powershell -NoProfile -Command \"if (Test-Path dist) { Remove-Item -LiteralPath dist -Recurse -Force }\"",
+    "generate:themes": "tsc -p ./tsconfig.themes.json && node ./.theme-build/themes/src/generate.js",
+    "compile": "npm run clean && npm run generate:themes && tsc -p ./tsconfig.json",
+    "build": "npm run compile && node ./dist/build.js",
+    "package": "npm run build",
+    "test": "npm run compile && npm run test:compiled",
+    "dev": "npm run compile && code --extensionDevelopmentPath=$PWD && npm run watch",
+    "watch": "tsc -p ./tsconfig.json --watch",
+    "test:compiled": "node --test ./dist/test/customization.test.js ./dist/test/theme.test.js"
+  },
+  "devDependencies": {
+    "@types/node": "^24.6.0",
+    "@types/vscode": "^1.60.0",
+    "typescript": "^5.9.3"
+  },
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Zenkai Classic",
+        "uiTheme": "vs-dark",
+        "path": "./themes/zenkai-classic.json"
+      },
+      {
+        "label": "Zenkai Espresso",
+        "uiTheme": "vs-dark",
+        "path": "./themes/zenkai-espresso.json"
+      },
+      {
+        "label": "Zenkai Nautilus",
+        "uiTheme": "vs-dark",
+        "path": "./themes/zenkai-nautilus.json"
+      },
+      {
+        "label": "Zenkai Graphite",
+        "uiTheme": "vs-dark",
+        "path": "./themes/zenkai-graphite.json"
+      }
+    ],
+    "configuration": {
+      "title": "Zenkai",
+      "type": "object",
+      "properties": {
+        "zenkai.accentCustomColor": {
+          "type": "string",
+          "default": "",
+          "order": 1,
+          "pattern": "^$|^#[0-9a-fA-F]{6}$",
+          "markdownDescription": "Custom accent color as `#RRGGBB`. Leave blank to keep the bundled theme accent."
+        },
+        "zenkai.contrast": {
+          "type": "string",
+          "default": "default",
+          "order": 2,
+          "enum": [
+            "default",
+            "softer",
+            "stronger"
+          ],
+          "enumItemLabels": [
+            "Default",
+            "Softer",
+            "Stronger"
+          ],
+          "markdownDescription": "Adjust the contrast between Zenkai workbench surfaces. `default` keeps the bundled theme values."
+        },
+        "zenkai.border": {
+          "type": "string",
+          "default": "default",
+          "order": 3,
+          "enum": [
+            "default",
+            "subtle",
+            "defined"
+          ],
+          "enumItemLabels": [
+            "Default",
+            "Subtle",
+            "Defined"
+          ],
+          "markdownDescription": "Adjust how pronounced Zenkai borders and dividers appear. `default` keeps the bundled theme values."
+        },
+        "zenkai.popupTransparency": {
+          "type": "number",
+          "default": 1,
+          "order": 4,
+          "minimum": 0,
+          "maximum": 1,
+          "markdownDescription": "Adjust popup menu opacity from `0` to `1`. `1` keeps popup menus fully opaque, while `0` makes them fully transparent."
+        }
+      }
+    }
+  }
+}
