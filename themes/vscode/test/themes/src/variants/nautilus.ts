@@ -1,39 +1,42 @@
-import type { ThemeVariantSource } from "../types";
-
-export const nautilusVariant: ThemeVariantSource = {
-  id: "nautilus",
-  name: "Zenkai Nautilus",
-  outputPath: "themes/zenkai-nautilus.json",
-  palette: {
-    chromeBg: "#1c2124",
-    overlayBg: "#202528",
-    commandCenterBg: "#23282c",
-    sidebarBg: "#202529",
-    raisedBg: "#283035",
-    editorBg: "#272e32",
-    activityBarBorder: "#333a40",
-    border: "#3c444b",
-    indentGuideInactive: "#485159",
-    surfaceBg: "#2e373c",
-    chromeBorder: "#4b545c",
-    panelBorder: "#55616b",
-    interactionBg: "#616d77",
-    indentGuideActive: "#727f89",
-    info: "#67bfd1",
-    fgSubtle: "#68727a",
-    fgStatus: "#7b8790",
-    success: "#79bf8a",
-    fgMuted: "#a0acb4",
-    fgSidebar: "#afb8c0",
-    accent: "#68b8ac",
-    purple: "#9f92da",
-    fgSecondary: "#c6d0d6",
-    fg: "#d8e0e4",
-    error: "#d97b8c",
-    warning: "#d4ab73",
-    pureRed: "#ff0000",
-    pureWhite: "#ffffff",
-  },
-};
-
-export default nautilusVariant;
+import type { ThemeVariantSource } from "../types";
+
+// Nautilus keeps a faint cool blue-gray cast on an otherwise neutral gray stack,
+// with muted steel-blue accents and calmer foreground neutrals.
+export const nautilusVariant: ThemeVariantSource = {
+  id: "nautilus",
+  name: "Zenkai Nautilus",
+  outputPath: "themes/zenkai-nautilus.json",
+  palette: {
+    chromeBg: "#1b1c20",
+    overlayBg: "#1f2024",
+    commandCenterBg: "#222328",
+    sidebarBg: "#232428",
+    raisedBg: "#25262a",
+    editorBg: "#282a2e",
+    activityBarBorder: "#2d2e34",
+    border: "#313238",
+    indentGuideInactive: "#37383e",
+    surfaceBg: "#383a40",
+    chromeBorder: "#393a40",
+    panelBorder: "#424448",
+    interactionBg: "#54555c",
+    indentGuideActive: "#595a62",
+    info: "#5888b0",
+    fgSubtle: "#6a6c74",
+    fgStatus: "#6c6e76",
+    success: "#78b888",
+    fgMuted: "#8a8c94",
+    fgSidebar: "#8c8e96",
+    accent: "#5278a0",
+    purple: "#9890d8",
+    fgSecondary: "#b8b6c0",
+    fg: "#d6dae4",
+    error: "#d07888",
+    warning: "#d0a870",
+    pureRed: "#ff0000",
+    pureWhite: "#ffffff",
+  },
+};
+
+export default nautilusVariant;
+

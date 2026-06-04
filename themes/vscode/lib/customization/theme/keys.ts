@@ -4,7 +4,6 @@ export const ACCENT_COLOR_KEYS = Object.freeze([
   "activityBar.activeFocusBorder",
   "activityBarTop.foreground",
   "activityBarBadge.background",
-  "chat.slashCommandForeground",
   "checkbox.foreground",
   "debugConsoleInputIcon.foreground",
   "debugIcon.breakpointCurrentStackframeForeground",
@@ -42,7 +41,6 @@ export const ACCENT_ALPHA_KEYS = Object.freeze([
 export const CHROME_COLOR_KEYS = Object.freeze([
   "activityBar.background",
   "activityBarTop.background",
-  "chat.requestBackground",
   "commandCenter.background",
   "debugExceptionWidget.background",
   "debugToolBar.background",

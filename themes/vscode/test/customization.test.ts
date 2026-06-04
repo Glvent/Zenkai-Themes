@@ -22,9 +22,9 @@ test("theme defaults resolve per bundled theme", () => {
   const nautilusAccent = resolveAccentColor(nautilusTheme.colors, normalizeSettings({}));
   const graphiteAccent = resolveAccentColor(graphiteTheme.colors, normalizeSettings({}));
 
-  assert.equal(classicAccent, "#e6c86a");
-  assert.equal(espressoAccent, "#d89d74");
-  assert.equal(nautilusAccent, "#68b8ac");
+  assert.equal(classicAccent, "#ddb860");
+  assert.equal(espressoAccent, "#c89878");
+  assert.equal(nautilusAccent, "#5278a0");
   assert.equal(graphiteAccent, "#f0a84a");
 });
 

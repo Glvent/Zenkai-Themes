@@ -40,12 +40,6 @@
     "charts.purple": "#948ae3",
     "charts.red": "#fc618d",
     "charts.yellow": "#f0a84a",
-    "chat.avatarBackground": "#282828",
-    "chat.avatarForeground": "#948ae3",
-    "chat.requestBackground": "#39383a",
-    "chat.requestBorder": "#555356",
-    "chat.slashCommandBackground": "#00000000",
-    "chat.slashCommandForeground": "#f0a84a",
     "checkbox.background": "#39383a",
     "checkbox.border": "#555356",
     "checkbox.foreground": "#f0a84a",
@@ -127,7 +121,7 @@
     "editor.lineHighlightBackground": "#f7f1ff0c",
     "editor.lineHighlightBorder": "#00000000",
     "editor.linkedEditingBackground": "#39383a",
-    "editor.rangeHighlightBackground": "#39383a",
+    "editor.rangeHighlightBackground": "#28282800",
     "editor.rangeHighlightBorder": "#39383a",
     "editor.selectionBackground": "#bab6c026",
     "editor.selectionHighlightBackground": "#f7f1ff26",
@@ -243,11 +237,6 @@
     "gitDecoration.stageModifiedResourceForeground": "#f0a84a",
     "gitDecoration.untrackedResourceForeground": "#bab6c0",
     "icon.foreground": "#8b888f",
-    "inlineChat.background": "#282828",
-    "inlineChat.border": "#323232",
-    "inlineChat.shadow": "#202020",
-    "inlineChatDiff.inserted": "#7bd88f19",
-    "inlineChatDiff.removed": "#7bd88f19",
     "inlineEdit.gutterIndicator.background": "#39383a",
     "inlineEdit.gutterIndicator.primaryBackground": "#39383a",
     "inlineEdit.gutterIndicator.primaryBorder": "#39383a",
@@ -333,7 +322,6 @@
     "mergeEditor.conflict.unhandled.minimapOverViewRuler": "#fc618d",
     "mergeEditor.conflict.unhandledFocused.border": "#fc618d",
     "mergeEditor.conflict.unhandledUnfocused.border": "#fc618d",
-    "minimap.chatEditHighlight": "#948ae3a5",
     "minimap.errorHighlight": "#fc618da5",
     "minimap.findMatchHighlight": "#8b888fa5",
     "minimap.infoHighlight": "#5ad4e6a5",
@@ -1367,15 +1355,6 @@
       }
     },
     {
-      "scope": [
-        "meta.paragraph.markdown meta.dummy.line-break",
-        "meta.paragraph.markdown meta.hard-line-break.markdown"
-      ],
-      "settings": {
-        "background": "#948AE3"
-      }
-    },
-    {
       "scope": "markup.underline.link punctuation",
       "settings": {
         "foreground": "#7BD88F"
@@ -1395,50 +1374,43 @@
     {
       "scope": "region.redish",
       "settings": {
-        "foreground": "#FC618D",
-        "background": "#FC618D59"
+        "foreground": "#FC618D"
       }
     },
     {
       "scope": "region.orangish",
       "settings": {
-        "foreground": "#FD9353",
-        "background": "#FD935359"
+        "foreground": "#FD9353"
       }
     },
     {
       "scope": "region.yellowish",
       "settings": {
-        "foreground": "#f0a84a",
-        "background": "#f0a84a59"
+        "foreground": "#f0a84a"
       }
     },
     {
       "scope": "region.greenish",
       "settings": {
-        "foreground": "#7BD88F",
-        "background": "#7BD88F59"
+        "foreground": "#7BD88F"
       }
     },
     {
       "scope": "region.bluish",
       "settings": {
-        "foreground": "#5AD4E6",
-        "background": "#5AD4E659"
+        "foreground": "#5AD4E6"
       }
     },
     {
       "scope": "region.purplish",
       "settings": {
-        "foreground": "#948AE3",
-        "background": "#948AE359"
+        "foreground": "#948AE3"
       }
     },
     {
       "scope": "region.pinkish",
       "settings": {
-        "foreground": "#FC618D",
-        "background": "#FC618D59"
+        "foreground": "#FC618D"
       }
     },
     {
@@ -1538,15 +1510,13 @@
     {
       "scope": "storage.type.extends",
       "settings": {
-        "foreground": "#FC618D",
-        "fontStyle": "normal"
+        "foreground": "#FC618D"
       }
     },
     {
       "scope": "storage.type.function.arrow",
       "settings": {
-        "foreground": "#FC618D",
-        "fontStyle": "normal"
+        "foreground": "#FC618D"
       }
     },
     {
@@ -1738,8 +1708,7 @@
     {
       "scope": "support.type.property-name",
       "settings": {
-        "foreground": "#F7F1FF",
-        "fontStyle": "normal"
+        "foreground": "#F7F1FF"
       }
     },
     {
