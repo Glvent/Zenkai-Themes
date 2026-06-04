@@ -4,7 +4,7 @@
   "description": "A minimal Monokai Pro fork with four UI variants.",
   "version": "1.0.1",
   "publisher": "glvent",
-  "icon": "images/Zenkai.png",
+  "icon": "assets/zenkai.png",
   "author": "George Vent <gvent2007@gmail.com>",
   "repository": "",
   "main": "./dist/extension.js",
