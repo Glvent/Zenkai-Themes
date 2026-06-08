@@ -8,173 +8,30 @@
   "minimum_chrome_version": "88",
   "theme": {
     "colors": {
-      "frame": [
-        29,
-        29,
-        26
-      ],
-      "frame_inactive": [
-        29,
-        29,
-        26
-      ],
-      "frame_incognito": [
-        29,
-        29,
-        26
-      ],
-      "frame_incognito_inactive": [
-        29,
-        29,
-        26
-      ],
-      "toolbar": [
-        37,
-        37,
-        34
-      ],
-      "toolbar_button_icon": [
-        196,
-        194,
-        186
-      ],
-      "toolbar_text": [
-        243,
-        241,
-        231
-      ],
-      "tab_text": [
-        243,
-        241,
-        231
-      ],
-      "tab_background_text": [
-        151,
-        152,
-        143
-      ],
-      "tab_background_text_inactive": [
-        151,
-        152,
-        143
-      ],
-      "tab_background_text_incognito": [
-        196,
-        194,
-        186
-      ],
-      "tab_background_text_incognito_inactive": [
-        88,
-        91,
-        84
-      ],
-      "bookmark_text": [
-        243,
-        241,
-        231
-      ],
-      "button_background": [
-        29,
-        29,
-        26
-      ],
-      "ntp_background": [
-        29,
-        29,
-        26
-      ],
-      "ntp_text": [
-        243,
-        241,
-        231
-      ],
-      "ntp_link": [
-        194,
-        192,
-        182
-      ],
-      "ntp_header": [
-        243,
-        241,
-        231
-      ],
-      "omnibox_background": [
-        37,
-        37,
-        34
-      ],
-      "omnibox_text": [
-        243,
-        241,
-        231
-      ],
-      "background_tab": [
-        29,
-        29,
-        26
-      ],
-      "background_tab_inactive": [
-        29,
-        29,
-        26
-      ],
-      "background_tab_incognito": [
-        29,
-        29,
-        26
-      ],
-      "background_tab_incognito_inactive": [
-        29,
-        29,
-        26
-      ]
-    },
-    "tints": {
-      "buttons": [
-        -1,
-        0.5,
-        0.5
-      ],
-      "frame": [
-        -1,
-        0.5,
-        0.5
-      ],
-      "frame_inactive": [
-        -1,
-        0.5,
-        0.7
-      ],
-      "frame_incognito": [
-        -1,
-        0.2,
-        0.35
-      ],
-      "frame_incognito_inactive": [
-        -1,
-        0.3,
-        0.6
-      ],
-      "background_tab": [
-        -1,
-        -1,
-        -1
-      ],
-      "background_tab_inactive": [
-        -1,
-        -1,
-        -1
-      ],
-      "background_tab_incognito": [
-        -1,
-        -1,
-        -1
-      ],
-      "background_tab_incognito_inactive": [
-        -1,
-        -1,
-        -1
-      ]
+      "frame": [28, 28, 26],
+      "frame_inactive": [28, 28, 26],
+      "frame_incognito": [28, 28, 26],
+      "frame_incognito_inactive": [28, 28, 26],
+      "toolbar": [40, 40, 38],
+      "toolbar_button_icon": [186, 186, 180],
+      "toolbar_text": [240, 240, 234],
+      "tab_text": [240, 240, 234],
+      "tab_background_text": [139, 139, 135],
+      "tab_background_text_inactive": [139, 139, 135],
+      "tab_background_text_incognito": [186, 186, 180],
+      "tab_background_text_incognito_inactive": [85, 84, 82],
+      "bookmark_text": [240, 240, 234],
+      "button_background": [28, 28, 26],
+      "ntp_background": [40, 40, 38],
+      "ntp_text": [240, 240, 234],
+      "ntp_link": [186, 186, 180],
+      "ntp_header": [240, 240, 234],
+      "omnibox_background": [35, 34, 32],
+      "omnibox_text": [240, 240, 234],
+      "background_tab": [28, 28, 26],
+      "background_tab_inactive": [28, 28, 26],
+      "background_tab_incognito": [28, 28, 26],
+      "background_tab_incognito_inactive": [28, 28, 26]
     },
     "properties": {
       "ntp_background_alignment": "center center",

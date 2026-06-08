@@ -2,14 +2,16 @@
 
 A set of dark themes for Chromium-based browsers, shaped around the `Zenkai` palette and inspired by Monokai Pro. Each variant keeps the same core color structure while shifting the frame and toolbar neutrals to create a distinct mood.
 
+**Canonical palettes:** [`../reference/zenkai-palettes.json`](../reference/zenkai-palettes.json) and [`../reference/README.md`](../reference/README.md) — use these hex values when updating Chrome (or Zed) themes to stay aligned with VS Code.
+
 ## Variants
 
-| Theme                   | Mood            | Frame   | Toolbar | Accent  | Link    |
-| ----------------------- | --------------- | ------- | ------- | ------- | ------- |
-| [Graphite](Graphite/) | Muted charcoal  | #1C1C1C | #282828 | #F7F1FF | #B2AEB8 |
-| [Classic](Classic/) | Warm olive      | #1D1D1A | #262722 | #F3F1E7 | #C2C0B6 |
-| [Espresso](Espresso/) | Coffee brown    | #181513 | #211D1A | #ECE4DC | #BCB2A8 |
-| [Nautilus](Nautilus/) | Cool slate-blue | #1C2124 | #202529 | #D8E0E4 | #BCC0C6 |
+| Theme | Mood | Frame | Toolbar / NTP | Text | Link |
+| --- | --- | --- | --- | --- | --- |
+| [Graphite](graphite/) | Muted charcoal | #1C1C1C | #282828 | #F7F1FF | #BAB6C0 |
+| [Classic](classic/) | Warm olive | #1C1C1A | #282826 | #F0F0EA | #BABAB4 |
+| [Espresso](espresso/) | Coffee brown | #1C1B1A | #282724 | #ECEAE6 | #BAB8B4 |
+| [Nautilus](nautilus/) | Cool slate-blue | #1B1C20 | #282A2E | #D6DAE4 | #B8B6C0 |
 
 ## Quickstart
 
@@ -33,7 +35,7 @@ Turn on **Developer mode**, then click **Load unpacked**
 
 #### **4. Choose a variant**
 
-Select one of the theme folders: [Classic](Classic/), [Graphite](Graphite/), [Espresso](Espresso/), or [Nautilus](Nautilus/)
+Select one of the theme folders: [Classic](classic/), [Graphite](graphite/), [Espresso](espresso/), or [Nautilus](nautilus/)
 
 #### **5. Switch themes later**
 

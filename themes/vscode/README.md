@@ -1,33 +1,79 @@
-# Zenkai
+# Zenkai (VS Code)
 
-Zenkai is a Monokai-derived VS Code theme set that keeps the familiar Monokai Pro syntax palette while softening the workbench UI. The chrome stays flatter, lower-contrast, and lightly bordered, with variant palettes layered on top of the same baseline structure.
+Zenkai is a Monokai-derived VS Code theme extension with four UI variants. Syntax colors follow Monokai Pro; the workbench is a custom, flatter, lower-contrast shell with light borders and optional runtime customization.
 
-## Included Themes
+Shared palette data for all editors lives in [`../reference/`](../reference/) (`zenkai-palettes.json`).
 
-- `Zenkai Classic`
-- `Zenkai Espresso`
-- `Zenkai Nautilus`
-- `Zenkai Graphite`
+## Themes
+
+| Variant | Character |
+| --- | --- |
+| **Classic** | Warm olive cast on neutral grays; muted gold accent |
+| **Espresso** | Warm brown cast; muted copper accent |
+| **Nautilus** | Cool blue-gray cast; steel-blue accent |
+| **Graphite** | Neutral charcoal; Monokai Pro accents (generation baseline) |
+
+Variant differences are UI-surface remaps only—borders, transparency, shadows, and interaction styling stay structurally consistent. Syntax `tokenColors` are shared across variants.
 
 ## Customization
 
-Zenkai includes settings-backed workbench customization for its bundled themes. When one of the supported Zenkai themes is active, the extension writes theme-scoped `workbench.colorCustomizations` entries on your behalf and keeps unrelated theme overrides intact.
+When a bundled Zenkai theme is active, the extension applies theme-scoped `workbench.colorCustomizations` and leaves unrelated theme overrides intact.
 
-- `zenkai.accentCustomColor`: provide a custom `#RRGGBB` accent; leave it blank to keep the bundled theme accent
-- `zenkai.contrast`: choose `default`, `softer`, or `stronger`
-- `zenkai.border`: choose `default`, `subtle`, or `defined`
-- `zenkai.popupTransparency`: choose a popup menu opacity value from `0` to `1`
+| Setting | Values | Effect |
+| --- | --- | --- |
+| `zenkai.accentCustomColor` | `#RRGGBB` or empty | Custom accent; blank keeps the theme accent |
+| `zenkai.contrast` | `default`, `softer`, `stronger` | Surface contrast vs bundled values |
+| `zenkai.border` | `default`, `subtle`, `defined` | Border/divider prominence |
+| `zenkai.popupTransparency` | `0`–`1` | Popup menu opacity (`1` = opaque) |
 
-## Notes
+## Source layout
 
-- Used the original Monokai Pro themes as a reference for syntax colors, but the workbench UI is a custom design inspired by the original's softer, flatter style.
-- Syntax colors stay aligned with the base Monokai Pro theme across every variant.
-- The bundled theme JSON files are generated from `themes/src/`; edit the source inputs and regenerate rather than hand-editing `themes/*.json`.
-- Variant differences are UI-surface remaps only; borders, transparency, shadows, and interaction styling stay structurally consistent.
+```
+themes/src/
+  types.ts          # ThemePalette roles
+  generate.ts       # Remap Graphite workbench colors → variant palettes
+  variants/         # classic, espresso, nautilus, graphite (.ts)
+themes/
+  zenkai-*.json     # Generated VS Code color themes (do not hand-edit)
+```
+
+Edit palettes in `themes/src/variants/`, then regenerate. Do not edit `themes/*.json` directly.
 
 ## Development
 
-- `npm run generate:themes`: regenerate the bundled `themes/*.json` files from `themes/src/`.
-- `npm run build`: deletes the existing packaged `.vsix`, refreshes the installed extension in the active VS Code CLI, runs tests, and builds a fresh `.vsix`.
-- `npm test`: runs Node's built-in test runner with `node --test`.
-- `npm run package`: runs `npm run build`.
+From `themes/vscode`:
+
+| Script | What it does |
+| --- | --- |
+| `npm run generate:themes` | Compile theme sources and write `themes/zenkai-*.json` |
+| `npm run compile` | `clean` → `generate:themes` → compile extension to `dist/` |
+| `npm test` | `compile` then Node tests (`customization`, theme generation) |
+| `npm run test:compiled` | Tests only (requires `dist/`) |
+| `npm run build` | `compile` → package VSIX, run tests, refresh local install |
+| `npm run package` | Same as `build` |
+| `npm run dev` | `compile`, launch Extension Development Host, `watch` |
+| `npm run watch` | TypeScript watch for extension code |
+| `npm run clean` | Remove `dist/` |
+
+Typical loop after palette changes:
+
+```bash
+npm run generate:themes
+npm test
+```
+
+## Packaging a VSIX
+
+`npm run build` (or `package`) compiles the extension, runs tests, and invokes `@vscode/vsce package`. The `.vsix` is written to this directory (`zenkai-*.vsix`). The build script also uninstalls/reinstalls into the detected VS Code / Cursor CLI when available.
+
+To package without reinstalling, run compile and vsce manually:
+
+```bash
+npm run compile
+npx --yes @vscode/vsce package --allow-missing-repository --skip-license
+```
+
+## Notes
+
+- Monokai Pro informed syntax colors; the workbench UI is an original softer layout.
+- `theme-references/` under this package is gitignored local scratch; use tracked [`../reference/`](../reference/) for cross-editor palettes.
