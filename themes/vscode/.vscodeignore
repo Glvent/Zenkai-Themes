@@ -1,38 +1,36 @@
-# Local development files
-.gitignore
-.cursorignore
-.github/**
-.vscode/**
-.trunk/**
+# Keep the packaged .vsix lean: ship only runtime files.
+# Included by default (do NOT list): package.json, README.md, LICENSE,
+# assets/zenkai.png, themes/zenkai-*.json, dist/extension.js, dist/lib/**
 
-# Source and reference files not needed in the packaged extension
-*.ps1
-*.jsonc
+# TypeScript sources (compiled into dist/ at build time)
 **/*.ts
-themes/src/**
-monokai-pro.jsonc
-themes/*.jsonc
-theme-references/**
-tsconfig.json
-tsconfig.themes.json
-build.ts
-extension.ts
-lib/**/*.ts
-lib/**/*.js
-!dist/lib/**/*.js
-dist/build.js
-dist/themes/src/**
-dist/test/**
+!**/*.d.ts
+palettes/
+
+# Tests (source and compiled)
 test/**
+dist/test/**
 
-# Project docs and misc authoring files
-README.md
-docs/**
-scripts/**
+# Build-only entrypoint and sourcemaps, not needed at runtime
+dist/build.js
+dist/**/*.map
 
-# Generated/package artifacts
-*.vsix
+# Tooling / configs
+tsconfig*.json
+.gitignore
+.gitattributes
+.editorconfig
+.prettierrc
+.prettierignore
+.vscode/**
+
+# Package manager / scratch
 node_modules/**
-coverage/**
-out/**
-.theme-build/**
+package-lock.json
+**/*.vsix
+theme-references/**
+docs/**
+
+# OS noise
+.DS_Store
+Thumbs.db

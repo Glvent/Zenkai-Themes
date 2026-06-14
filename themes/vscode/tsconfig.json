@@ -24,7 +24,7 @@
     "node_modules",
     "docs",
     "theme-references",
-    "test/themes/src/**/*.ts",
+    "palettes",
     "*.vsix"
   ]
 }

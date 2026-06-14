@@ -1,0 +1,43 @@
+{
+  "manifest_version": 3,
+  "name": "Zenkai Graphite",
+  "short_name": "Zenkai",
+  "version": "1.0.0",
+  "version_name": "1.0",
+  "description": "Zenkai Graphite - A muted graphite dark theme with neutral accents.",
+  "minimum_chrome_version": "88",
+  "theme": {
+    "colors": {
+      "background_tab": [32, 32, 32],
+      "background_tab_inactive": [32, 32, 32],
+      "background_tab_incognito": [32, 32, 32],
+      "background_tab_incognito_inactive": [32, 32, 32],
+
+      "bookmark_text": [250, 250, 250],
+      "button_background": [32, 32, 32],
+
+      "frame": [32, 32, 32],
+      "frame_inactive": [32, 32, 32],
+      "frame_incognito": [32, 32, 32],
+      "frame_incognito_inactive": [32, 32, 32],
+
+      "ntp_background": [46, 46, 46],
+      "ntp_header": [46, 46, 46],
+      "ntp_link": [46, 46, 46],
+      "ntp_text": [46, 46, 46],
+
+      "omnibox_background": [56, 56, 56],
+      "omnibox_text": [250, 250, 250],
+
+      "tab_background_text": [225, 225, 225],
+      "tab_background_text_inactive": [200, 200, 200],
+      "tab_background_text_incognito": [225, 225, 225],
+      "tab_background_text_incognito_inactive": [200, 200, 200],
+      "tab_text": [250, 250, 250],
+
+      "toolbar": [46, 46, 46],
+      "toolbar_button_icon": [200, 200, 200],
+      "toolbar_text": [250, 250, 250]
+    }
+  }
+}

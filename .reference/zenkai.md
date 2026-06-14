@@ -2,19 +2,27 @@
 
 Portable, editor-agnostic color data for all Zenkai UI variants. Use this when building or syncing themes for VS Code, Zed, Chrome, or other targets without copying hex values by hand from each editor’s theme file.
 
-## Files
+---
 
-| File | Purpose |
-| --- | --- |
-| [`zenkai-palettes.json`](zenkai-palettes.json) | All four variants (`classic`, `espresso`, `nautilus`, `graphite`) with `id`, `name`, `description`, and a `palette` object keyed by semantic role |
+## References
 
-Role names match `ThemePalette` in [`themes/vscode/themes/src/types.ts`](../vscode/themes/src/types.ts).
+[palettes.json](palettes.json) includes all four variants: 
+- `classic`, 
+- `espresso`, 
+- `nautilus`, 
+- `graphite` 
+
+Each variant has `id`, `name`, `description`, and a `palette` object keyed by semantic role.
+
+Role names match `ThemePalette` in [`themes/vscode/palettes/types.ts`](../vscode/palettes/types.ts).
+
+---
 
 ## Format
 
-- **`version`**: schema version (currently `1`).
-- **`paletteRoles`**: short glossary for each palette key (documentation only).
-- **`variants`**: array of variant objects, each with:
+- **version**: schema version (currently `1`).
+- **paletteRoles**: short glossary for each palette key (documentation only).
+- **variants**: array of variant objects, each with:
   - **`id`**: stable slug (`classic`, `espresso`, `nautilus`, `graphite`)
   - **`name`**: display label
   - **`description`**: one-line mood / cast summary
@@ -24,17 +32,17 @@ Role names match `ThemePalette` in [`themes/vscode/themes/src/types.ts`](../vsco
 
 | Consumer | Authoritative palette source |
 | --- | --- |
-| **VS Code** | [`themes/vscode/themes/src/variants/*.ts`](../vscode/themes/src/variants/) — run `npm run generate:themes` in `themes/vscode` after edits |
+| **VS Code** | [`themes/vscode/palettes/variants/*.ts`](../vscode/palettes/variants/) — run `jiti palettes/generate.ts` in `themes/vscode` after edits |
 | **This JSON** | Should stay in sync with those `.ts` files when palettes change |
 | **Zed / Chrome** | Today maintained separately; use this file as the shared reference when updating them |
 
-The VS Code extension does not read `zenkai-palettes.json` at build time; generation still flows from TypeScript variants.
+The VS Code extension does not read `palettes.json` at build time; generation still flows from TypeScript variants.
 
 ## Mapping notes (by editor)
 
 ### VS Code
 
-Workbench colors are produced by remapping the Graphite theme JSON through each variant palette (`themes/vscode/themes/src/generate.ts`). Typical role → workbench keys:
+Workbench colors are produced by remapping the Graphite theme JSON through each variant palette (`themes/vscode/palettes/generate.ts`). Typical role → workbench keys:
 
 | Role | Examples |
 | --- | --- |
@@ -77,7 +85,7 @@ Convert hex → `[r, g, b]` (0–255) per channel.
 
 ## Workflow
 
-1. Change palette values in `themes/vscode/themes/src/variants/<variant>.ts` (or update `zenkai-palettes.json` first, then mirror into `.ts`).
-2. Regenerate VS Code JSON: `cd themes/vscode && npm run generate:themes`.
-3. Update `zenkai-palettes.json` if it was not updated in step 1.
+1. Change palette values in `themes/vscode/palettes/variants/<variant>.ts` (or update `palettes.json` first, then mirror into `.ts`).
+2. Regenerate VS Code JSON: `cd themes/vscode && jiti palettes/generate.ts`.
+3. Update `palettes.json` if it was not updated in step 1.
 4. Apply the same hex values to Zed / Chrome theme files using the mappings above.

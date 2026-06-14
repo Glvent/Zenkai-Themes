@@ -6,22 +6,26 @@
   "publisher": "glvent",
   "icon": "assets/zenkai.png",
   "author": "George Vent <gvent2007@gmail.com>",
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/glvent/zenkai-themes.git",
+    "directory": "themes/vscode"
+  },
   "main": "./dist/extension.js",
   "scripts": {
     "clean": "powershell -NoProfile -Command \"if (Test-Path dist) { Remove-Item -LiteralPath dist -Recurse -Force }\"",
-    "generate:themes": "tsc -p ./tsconfig.themes.json && node ./.theme-build/themes/src/generate.js",
-    "compile": "npm run clean && npm run generate:themes && tsc -p ./tsconfig.json",
-    "build": "npm run compile && node ./dist/build.js",
-    "package": "npm run build",
-    "test": "npm run compile && npm run test:compiled",
+    "compile": "npm run clean && jiti palettes/generate.ts && tsc -p ./tsconfig.json",
+    "build": "jiti build.ts",
+    "test": "npm run compile && node --test ./dist/test/customization.test.js ./dist/test/theme.test.js",
     "dev": "npm run compile && code --extensionDevelopmentPath=$PWD && npm run watch",
     "watch": "tsc -p ./tsconfig.json --watch",
-    "test:compiled": "node --test ./dist/test/customization.test.js ./dist/test/theme.test.js"
+    "format": "prettier --write \"**/*.{ts,json,md}\""
   },
   "devDependencies": {
     "@types/node": "^24.6.0",
     "@types/vscode": "^1.60.0",
+    "jiti": "^2.7.0",
+    "prettier": "^3.4.2",
     "typescript": "^5.9.3"
   },
   "activationEvents": [
@@ -32,6 +36,13 @@
   },
   "categories": [
     "Themes"
+  ],
+  "keywords": [
+    "theme",
+    "color-theme",
+    "monokai",
+    "dark",
+    "zenkai"
   ],
   "contributes": {
     "themes": [
@@ -67,45 +78,19 @@
           "pattern": "^$|^#[0-9a-fA-F]{6}$",
           "markdownDescription": "Custom accent color as `#RRGGBB`. Leave blank to keep the bundled theme accent."
         },
-        "zenkai.contrast": {
-          "type": "string",
-          "default": "default",
-          "order": 2,
-          "enum": [
-            "default",
-            "softer",
-            "stronger"
-          ],
-          "enumItemLabels": [
-            "Default",
-            "Softer",
-            "Stronger"
-          ],
-          "markdownDescription": "Adjust the contrast between Zenkai workbench surfaces. `default` keeps the bundled theme values."
-        },
-        "zenkai.border": {
-          "type": "string",
-          "default": "default",
-          "order": 3,
-          "enum": [
-            "default",
-            "subtle",
-            "defined"
-          ],
-          "enumItemLabels": [
-            "Default",
-            "Subtle",
-            "Defined"
-          ],
-          "markdownDescription": "Adjust how pronounced Zenkai borders and dividers appear. `default` keeps the bundled theme values."
-        },
         "zenkai.popupTransparency": {
           "type": "number",
           "default": 1,
-          "order": 4,
+          "order": 2,
           "minimum": 0,
           "maximum": 1,
           "markdownDescription": "Adjust popup menu opacity from `0` to `1`. `1` keeps popup menus fully opaque, while `0` makes them fully transparent."
+        },
+        "zenkai.terminalMatchSideBar": {
+          "type": "boolean",
+          "default": false,
+          "order": 3,
+          "markdownDescription": "Match the integrated terminal background to the sidebar color."
         }
       }
     }

@@ -1,26 +1,19 @@
 import {
   ACCENT_ALPHA_KEYS,
   ACCENT_COLOR_KEYS,
-  BORDER_BACKGROUND_KEYS,
-  CHROME_COLOR_KEYS,
   POPUP_BACKGROUND_KEYS,
-  SUPPORTED_THEMES,
-  THEME_DEFAULT,
-} from "../theme";
-import {
-  alphaFromTransparency,
-  getAlphaChannel,
-  mixColors,
-  normalizeHex,
-  scaleLightnessDelta,
-  withAlpha,
-} from "../color";
+  SIDEBAR_BACKGROUND_KEY,
+  TERMINAL_MATCH_KEYS,
+} from "../theme/keys";
+import { SUPPORTED_THEMES } from "../theme/catalog";
+import { getAlphaChannel, normalizeHex, withAlpha } from "../color/hex";
+import { alphaFromTransparency } from "../color/math";
 import { normalizeSettings } from "../settings";
 import type { RawSettings, ThemeColors, ThemeCustomizationBlock, ThemeName } from "../types";
 
 /**
  * Build the managed color overrides for one bundled theme from normalized user preferences.
- * Each section applies one customization dimension: accent, contrast, borders, popups, and guides.
+ * Each section applies one customization dimension: accent and popups.
  */
 export function buildThemeOverrides(
   themeName: ThemeName,
@@ -62,37 +55,13 @@ export function buildThemeOverrides(
     }
   }
 
-  if (settings.contrastValue !== THEME_DEFAULT) {
-    const factor = settings.contrastValue === "softer" ? 0.65 : 1.35;
-    const editorBackground = colors["editor.background"];
+  if (settings.terminalMatchSideBar) {
+    const sideBarBackground = overrides[SIDEBAR_BACKGROUND_KEY] ?? colors[SIDEBAR_BACKGROUND_KEY];
 
-    if (editorBackground) {
-      for (const colorKey of CHROME_COLOR_KEYS) {
-        const baseColor = colors[colorKey];
-
-        if (!baseColor) {
-          continue;
-        }
-
-        overrides[colorKey] = scaleLightnessDelta(baseColor, editorBackground, factor);
+    if (sideBarBackground) {
+      for (const colorKey of TERMINAL_MATCH_KEYS) {
+        overrides[colorKey] = sideBarBackground;
       }
-    }
-  }
-
-  if (settings.borderStrength !== THEME_DEFAULT) {
-    for (const [colorKey, backgroundKey] of Object.entries(BORDER_BACKGROUND_KEYS)) {
-      const baseColor = colors[colorKey];
-      const backgroundColor = colors[backgroundKey];
-      const foregroundColor = colors.foreground;
-
-      if (!baseColor || !backgroundColor || !foregroundColor) {
-        continue;
-      }
-
-      overrides[colorKey] =
-        settings.borderStrength === "subtle"
-          ? mixColors(baseColor, backgroundColor, 0.7)
-          : mixColors(baseColor, foregroundColor, 0.3);
     }
   }
 

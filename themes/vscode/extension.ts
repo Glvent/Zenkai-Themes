@@ -31,10 +31,8 @@ export function activate(context: vscode.ExtensionContext): void {
         const zenkaiConfig = vscode.workspace.getConfiguration(SETTINGS_NAMESPACE);
         const settings = normalizeSettings({
           accentCustomColor: zenkaiConfig.get("accentCustomColor"),
-          contrastValue: zenkaiConfig.get("contrast"),
-          border: zenkaiConfig.get("border"),
-          borderStrength: zenkaiConfig.get("borderStrength"),
           popupTransparency: zenkaiConfig.get("popupTransparency"),
+          terminalMatchSideBar: zenkaiConfig.get("terminalMatchSideBar"),
         } satisfies RawSettings);
 
         const currentCustomizations =

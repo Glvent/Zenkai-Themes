@@ -1,15 +1,15 @@
 import fs from "node:fs";
 import path from "node:path";
 
-import graphiteTheme from "../zenkai-graphite.json";
-import type { ThemeDocument } from "../../lib/customization/types";
+import graphiteTheme from "../themes/zenkai-graphite.json";
+import type { ThemeDocument } from "../lib/customization/types";
 import type { ThemePalette, ThemeVariantSource } from "./types";
 import classicVariant from "./variants/classic";
 import espressoVariant from "./variants/espresso";
 import graphiteVariant from "./variants/graphite";
 import nautilusVariant from "./variants/nautilus";
 
-const repoRoot = path.resolve(__dirname, "..", "..", "..");
+const packageRoot = path.resolve(__dirname, "..");
 const themeSchema = "vscode://schemas/color-theme";
 const baseTheme = graphiteTheme as ThemeDocument & {
   name?: string;
@@ -61,10 +61,10 @@ void main();
 function main(): void {
   for (const variant of variants) {
     const document = buildThemeDocument(variant);
-    const outputPath = path.join(repoRoot, variant.outputPath);
+    const outputPath = path.join(packageRoot, variant.outputPath);
 
     fs.writeFileSync(outputPath, `${JSON.stringify(document, null, 2)}\n`, "utf8");
-    console.log(`Generated ${path.relative(repoRoot, outputPath)}`);
+    console.log(`Generated ${path.relative(packageRoot, outputPath)}`);
   }
 }
 

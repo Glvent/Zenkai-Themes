@@ -1,4 +1,5 @@
-import { MANAGED_COLOR_KEYS, SUPPORTED_THEMES, getSupportedThemeNames } from "../theme";
+import { MANAGED_COLOR_KEYS } from "../theme/keys";
+import { SUPPORTED_THEMES, getSupportedThemeNames } from "../theme/catalog";
 import { normalizeSettings } from "../settings";
 import type { ColorCustomizations, RawSettings, ThemeName } from "../types";
 import { buildThemeOverrides } from "./themeOverrides";

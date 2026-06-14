@@ -1,31 +1,24 @@
 // Public entrypoint for the theme customization helpers used by the extension and tests.
+export { MANAGED_COLOR_KEYS } from "./customization/theme/keys";
 export {
-  MANAGED_COLOR_KEYS,
   SETTINGS_NAMESPACE,
   THEME_DEFAULT,
   getSupportedThemeNames,
-} from "./customization/theme";
-export {
-  alphaFromTransparency,
-  mixColors,
-  scaleLightnessDelta,
-  withAlpha,
-} from "./customization/color";
+} from "./customization/theme/catalog";
+export { withAlpha } from "./customization/color/hex";
+export { alphaFromTransparency } from "./customization/color/math";
 export { normalizeSettings } from "./customization/settings";
+export { buildColorCustomizations } from "./customization/overrides/customizations";
 export {
-  buildColorCustomizations,
   buildThemeOverrides,
   resolveAccentColor,
-} from "./customization/overrides";
+} from "./customization/overrides/themeOverrides";
 export type {
-  BorderStrength,
-  ChromeContrast,
   ColorCustomizations,
   NormalizedSettings,
   RawSettings,
   ThemeColors,
   ThemeCustomizationBlock,
-  ThemeDefault,
   ThemeDefinition,
   ThemeDocument,
   ThemeName,

@@ -3,7 +3,7 @@ import test from "node:test";
 
 import { getSupportedThemeNames } from "../lib/customization";
 import { normalizeSettings, resolveAccentColor } from "../lib/customization";
-import { BORDER_BACKGROUND_KEYS, MANAGED_COLOR_KEYS } from "../lib/customization/theme/keys";
+import { MANAGED_COLOR_KEYS } from "../lib/customization/theme/keys";
 import classicTheme from "../themes/zenkai-classic.json";
 import espressoTheme from "../themes/zenkai-espresso.json";
 import graphiteTheme from "../themes/zenkai-graphite.json";
@@ -37,12 +37,8 @@ test("tokenColors stay shared across every bundled theme", () => {
   }
 });
 
-test("bundled themes keep the managed chrome and border keys required by customization", () => {
-  const requiredKeys = new Set<string>([
-    ...MANAGED_COLOR_KEYS,
-    ...Object.values(BORDER_BACKGROUND_KEYS),
-    "foreground",
-  ]);
+test("bundled themes keep the managed keys required by customization", () => {
+  const requiredKeys = new Set<string>([...MANAGED_COLOR_KEYS, "foreground"]);
 
   for (const [themeName, theme] of bundledThemes) {
     const colors = theme.colors as Record<string, string>;
@@ -60,6 +56,18 @@ test("default accents resolve from each bundled theme's accent keys", () => {
     assert.equal(accent, theme.colors["tab.activeForeground"], `${themeName} tab accent mismatch`);
     assert.equal(accent, theme.colors["textLink.foreground"], `${themeName} text link accent mismatch`);
     assert.equal(accent, theme.colors["panelTitle.activeForeground"], `${themeName} panel title accent mismatch`);
-    assert.equal(accent, theme.colors["activityBar.activeFocusBorder"], `${themeName} activity bar accent mismatch`);
+  }
+});
+
+test("bundled themes hide active activity and panel title underlines", () => {
+  for (const [themeName, theme] of bundledThemes) {
+    assert.equal(theme.colors["activityBar.activeBorder"], "#00000000", `${themeName} activity underline is visible`);
+    assert.equal(
+      theme.colors["activityBar.activeFocusBorder"],
+      "#00000000",
+      `${themeName} focused activity underline is visible`
+    );
+    assert.equal(theme.colors["panelTitle.activeBorder"], "#00000000", `${themeName} panel title underline is visible`);
+    assert.equal(theme.colors["tab.activeBorder"], "#00000000", `${themeName} tab underline is visible`);
   }
 });
