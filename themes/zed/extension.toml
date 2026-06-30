@@ -1,8 +1,14 @@
-id = "zenkai-graphite-theme"
-name = "Zenkai Graphite"
+﻿id = "zenkai-themes"
+name = "Zenkai"
 version = "0.0.1"
 schema_version = 1
 authors = ["Zenkai"]
-description = "Zenkai Graphite theme for Zed, converted from the VSCode theme."
+repository = "file:///V:/Zenkai"
+description = "Zenkai themes for Zed — Classic, Espresso, Nautilus, and Graphite."
 
-themes = ["themes/zenkai-graphite.json"]
+themes = [
+  "themes/zenkai-classic.json",
+  "themes/zenkai-espresso.json",
+  "themes/zenkai-nautilus.json",
+  "themes/zenkai-graphite.json",
+]

@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "Zenkai Nautilus",
+  "short_name": "Zenkai",
+  "version": "1.0.0",
+  "version_name": "1.0",
+  "description": "Zenkai Nautilus - A muted dark theme with a cool blue-gray cast.",
+  "minimum_chrome_version": "88",
+  "theme": {
+    "colors": {
+      "background_tab": [31, 32, 36],
+      "background_tab_inactive": [31, 32, 36],
+      "background_tab_incognito": [31, 32, 36],
+      "background_tab_incognito_inactive": [31, 32, 36],
+      "bookmark_text": [250, 250, 250],
+      "button_background": [31, 32, 36],
+      "frame": [31, 32, 36],
+      "frame_inactive": [31, 32, 36],
+      "frame_incognito": [31, 32, 36],
+      "frame_incognito_inactive": [31, 32, 36],
+      "ntp_background": [45, 46, 52],
+      "ntp_header": [45, 46, 52],
+      "ntp_link": [45, 46, 52],
+      "ntp_text": [45, 46, 52],
+      "omnibox_background": [55, 56, 62],
+      "omnibox_text": [250, 250, 250],
+      "tab_background_text": [225, 225, 225],
+      "tab_background_text_inactive": [200, 200, 200],
+      "tab_background_text_incognito": [225, 225, 225],
+      "tab_background_text_incognito_inactive": [200, 200, 200],
+      "tab_text": [250, 250, 250],
+      "toolbar": [45, 46, 52],
+      "toolbar_button_icon": [200, 200, 200],
+      "toolbar_text": [250, 250, 250]
+    }
+  }
+}

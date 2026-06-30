@@ -14,7 +14,7 @@
   "main": "./dist/extension.js",
   "scripts": {
     "clean": "powershell -NoProfile -Command \"if (Test-Path dist) { Remove-Item -LiteralPath dist -Recurse -Force }\"",
-    "compile": "npm run clean && jiti palettes/generate.ts && tsc -p ./tsconfig.json",
+    "compile": "npm run clean && jiti palettes/generate.ts && jiti palettes/generate-zed.ts && jiti palettes/generate-chrome.ts && tsc -p ./tsconfig.json",
     "build": "jiti build.ts",
     "test": "npm run compile && node --test ./dist/test/customization.test.js ./dist/test/theme.test.js",
     "dev": "npm run compile && code --extensionDevelopmentPath=$PWD && npm run watch",
@@ -22,7 +22,7 @@
     "format": "prettier --write \"**/*.{ts,json,md}\""
   },
   "devDependencies": {
-    "@types/node": "^24.6.0",
+    "@types/node": "^24.13.2",
     "@types/vscode": "^1.60.0",
     "jiti": "^2.7.0",
     "prettier": "^3.4.2",

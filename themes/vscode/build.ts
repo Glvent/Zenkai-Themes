@@ -77,6 +77,8 @@ async function clean(): Promise<string | null> {
 // Regenerate the bundled theme JSON from the palette definitions.
 async function generate(): Promise<string | null> {
 	execOrThrow("jiti", ["palettes/generate.ts"]);
+	execOrThrow("jiti", ["palettes/generate-zed.ts"]);
+	execOrThrow("jiti", ["palettes/generate-chrome.ts"]);
 	return null;
 }
 
